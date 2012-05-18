@@ -39,3 +39,34 @@ BaseContainer *ObjectDataM::GetDataInstance(GeListNode *node)
 	BaseContainer *data = op->GetDataInstance();
 	return data;
 }
+
+Bool ObjectDataM::OnMenuPrepare(GeListNode *node, BaseDocument *doc) 
+{
+   // to be overridden in C# 
+   return true;
+}
+
+Bool ObjectDataM::OnDescriptionCommand(GeListNode *node, DescriptionCommand *desc) 
+{
+   // to be overridden in C# 
+   return true;
+}
+
+
+// TODO: add additional handler methods here…
+Bool ObjectDataM::Message(GeListNode *node, LONG type, void *data){
+    BaseDocument *doc;
+    DescriptionCommand *desc;
+    BaseContainer *nodebc;
+    switch(type)
+    {
+    case MSG_MENUPREPARE:
+        doc = (BaseDocument*)data;
+        return OnMenuPrepare(node, doc);
+    case MSG_DESCRIPTION_COMMAND:
+        desc = (DescriptionCommand*) data;
+        return OnDescriptionCommand(node, desc);
+    // TODO: add possible messages here…
+    }
+    return TRUE;
+}

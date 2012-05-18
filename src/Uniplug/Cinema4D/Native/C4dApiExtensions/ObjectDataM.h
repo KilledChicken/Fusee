@@ -1,6 +1,7 @@
 #pragma once
 #include "c4d_objectdata.h"
-
+#include "lib_description.h"
+#include "lib_ca.h"
 
 // We need this construction because SWIG is unable to handle the reference on enum parameters
 // (e.g. the DESCFLAGS_DESC &flags parameter in GetDDescruption)  in the 
@@ -25,6 +26,13 @@ public:
 
     virtual Bool GetDDescription(GeListNode *node, Description *description, DESCFLAGS_DESC &flags);
 	virtual Bool GetDDescription(GeListNode *node, DDescriptionParams *descparams);
+
+	// NEW START
+	virtual Bool Message(GeListNode *node, LONG type, void *data);
+
+	virtual Bool ObjectDataM::OnDescriptionCommand(GeListNode *node, DescriptionCommand *desc); 
+	virtual Bool ObjectDataM::OnMenuPrepare(GeListNode *node, BaseDocument *doc);
+	// NEW END
 
 	static BaseContainer *GetDataInstance(BaseObject *op);
 	static BaseContainer *GetDataInstance(GeListNode *node);
