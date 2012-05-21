@@ -55,6 +55,21 @@ public class ObjectDataM : ObjectData {
     return ret;
   }
 
+  public override bool Message(GeListNode node, int type, SWIGTYPE_p_void data) {
+    bool ret = (SwigDerivedClassHasMethod("Message", swigMethodTypes4) ? C4dApiPINVOKE.ObjectDataM_MessageSwigExplicitObjectDataM(swigCPtr, GeListNode.getCPtr(node), type, SWIGTYPE_p_void.getCPtr(data)) : C4dApiPINVOKE.ObjectDataM_Message(swigCPtr, GeListNode.getCPtr(node), type, SWIGTYPE_p_void.getCPtr(data)));
+    return ret;
+  }
+
+  public virtual bool OnDescriptionCommand(GeListNode node, DescriptionCommand desc) {
+    bool ret = (SwigDerivedClassHasMethod("OnDescriptionCommand", swigMethodTypes32) ? C4dApiPINVOKE.ObjectDataM_OnDescriptionCommandSwigExplicitObjectDataM(swigCPtr, GeListNode.getCPtr(node), DescriptionCommand.getCPtr(desc)) : C4dApiPINVOKE.ObjectDataM_OnDescriptionCommand(swigCPtr, GeListNode.getCPtr(node), DescriptionCommand.getCPtr(desc)));
+    return ret;
+  }
+
+  public virtual bool OnMenuPrepare(GeListNode node, BaseDocument doc) {
+    bool ret = (SwigDerivedClassHasMethod("OnMenuPrepare", swigMethodTypes33) ? C4dApiPINVOKE.ObjectDataM_OnMenuPrepareSwigExplicitObjectDataM(swigCPtr, GeListNode.getCPtr(node), BaseDocument.getCPtr(doc)) : C4dApiPINVOKE.ObjectDataM_OnMenuPrepare(swigCPtr, GeListNode.getCPtr(node), BaseDocument.getCPtr(doc)));
+    return ret;
+  }
+
   public static BaseContainer GetDataInstance(BaseObject op) {
     IntPtr cPtr = C4dApiPINVOKE.ObjectDataM_GetDataInstance__SWIG_0(BaseObject.getCPtr(op));
     BaseContainer ret = (cPtr == IntPtr.Zero) ? null : new BaseContainer(cPtr, false);
@@ -132,7 +147,11 @@ public class ObjectDataM : ObjectData {
       swigDelegate30 = new SwigDelegateObjectDataM_30(SwigDirectorSetHandle);
     if (SwigDerivedClassHasMethod("GetDDescription", swigMethodTypes31))
       swigDelegate31 = new SwigDelegateObjectDataM_31(SwigDirectorGetDDescription__SWIG_1);
-    C4dApiPINVOKE.ObjectDataM_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31);
+    if (SwigDerivedClassHasMethod("OnDescriptionCommand", swigMethodTypes32))
+      swigDelegate32 = new SwigDelegateObjectDataM_32(SwigDirectorOnDescriptionCommand);
+    if (SwigDerivedClassHasMethod("OnMenuPrepare", swigMethodTypes33))
+      swigDelegate33 = new SwigDelegateObjectDataM_33(SwigDirectorOnMenuPrepare);
+    C4dApiPINVOKE.ObjectDataM_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, Type[] methodTypes) {
@@ -318,6 +337,14 @@ public class ObjectDataM : ObjectData {
     return GetDDescription((node == IntPtr.Zero) ? null : new GeListNode(node, false), (descparams == IntPtr.Zero) ? null : new DDescriptionParams(descparams, false));
   }
 
+  private bool SwigDirectorOnDescriptionCommand(IntPtr node, IntPtr desc) {
+    return OnDescriptionCommand((node == IntPtr.Zero) ? null : new GeListNode(node, false), (desc == IntPtr.Zero) ? null : new DescriptionCommand(desc, false));
+  }
+
+  private bool SwigDirectorOnMenuPrepare(IntPtr node, IntPtr doc) {
+    return OnMenuPrepare((node == IntPtr.Zero) ? null : new GeListNode(node, false), (doc == IntPtr.Zero) ? null : new BaseDocument(doc, false));
+  }
+
   public delegate bool SwigDelegateObjectDataM_0(IntPtr node);
   public delegate void SwigDelegateObjectDataM_1(IntPtr node);
   public delegate bool SwigDelegateObjectDataM_2(IntPtr node, IntPtr hf, int level);
@@ -350,6 +377,8 @@ public class ObjectDataM : ObjectData {
   public delegate void SwigDelegateObjectDataM_29(IntPtr op, int i, IntPtr info);
   public delegate void SwigDelegateObjectDataM_30(IntPtr op, int i, Fusee.Math.Core.Vector3D /* Vector_imtype_out */ p, IntPtr info);
   public delegate bool SwigDelegateObjectDataM_31(IntPtr node, IntPtr descparams);
+  public delegate bool SwigDelegateObjectDataM_32(IntPtr node, IntPtr desc);
+  public delegate bool SwigDelegateObjectDataM_33(IntPtr node, IntPtr doc);
 
   private SwigDelegateObjectDataM_0 swigDelegate0;
   private SwigDelegateObjectDataM_1 swigDelegate1;
@@ -383,6 +412,8 @@ public class ObjectDataM : ObjectData {
   private SwigDelegateObjectDataM_29 swigDelegate29;
   private SwigDelegateObjectDataM_30 swigDelegate30;
   private SwigDelegateObjectDataM_31 swigDelegate31;
+  private SwigDelegateObjectDataM_32 swigDelegate32;
+  private SwigDelegateObjectDataM_33 swigDelegate33;
 
   private static Type[] swigMethodTypes0 = new Type[] { typeof(GeListNode) };
   private static Type[] swigMethodTypes1 = new Type[] { typeof(GeListNode) };
@@ -416,6 +447,8 @@ public class ObjectDataM : ObjectData {
   private static Type[] swigMethodTypes29 = new Type[] { typeof(BaseObject), typeof(int), typeof(HandleInfo) };
   private static Type[] swigMethodTypes30 = new Type[] { typeof(BaseObject), typeof(int), typeof(Fusee.Math.Core.Vector3D /* Vectorcstype */), typeof(HandleInfo) };
   private static Type[] swigMethodTypes31 = new Type[] { typeof(GeListNode), typeof(DDescriptionParams) };
+  private static Type[] swigMethodTypes32 = new Type[] { typeof(GeListNode), typeof(DescriptionCommand) };
+  private static Type[] swigMethodTypes33 = new Type[] { typeof(GeListNode), typeof(BaseDocument) };
 }
 
 }

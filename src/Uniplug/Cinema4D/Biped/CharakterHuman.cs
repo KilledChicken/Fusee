@@ -27,13 +27,13 @@ namespace RigPlugin
             /**
              * Wichtungstag definieren
              */
-            this.wtag = CAWeightTag.Alloc();
-            //TODO - Geaendert von DS
-            //this.wtagBaseTag = BaseTag.Alloc(C4dApi.Tweights);
+            //this.wtag = CAWeightTag.Alloc();
+            this.wtagBaseTag = BaseTag.Alloc(C4dApi.Tweights);
             /**
              * Wichtungstag in das BaseObject einbauen
              */
-            this.myMesh.InsertTag(this.wtag);
+            //this.myMesh.InsertTag(this.wtag);
+            this.myMesh.InsertTag(wtagBaseTag);
 
             /**
              * Standard BaseObject vom Typ Joint erstellen, diese sind bei Menschen immer aktiv

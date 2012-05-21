@@ -35,6 +35,12 @@ namespace YourManagedPlugin
             Logger.Debug("You can see me in the 'Cinema 4D' console when using the plugin.");
             Logger.Debug("Open the console by just pressing shift+F10 in 'Cinema 4D'");
 
+            BaseTag bT = BaseTag.Alloc(C4dApi.Tweights);
+            bT.GetName();
+
+            CAWeightTag wT = CAWeightTag.Alloc();
+            bT = wT;
+
             return true;
         }
     }

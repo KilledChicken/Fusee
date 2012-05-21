@@ -234,6 +234,9 @@ class String;
        case 1001149:
          ret = new XPressoTag(cPtr, owner);
          break;
+	   //case 1019365:
+		 //ret = new CAWeightTag(cPtr, owner);
+		// break;
       // Repeat for every other concrete type.
       default:
 	  //changed from the debug output to return a BaseTag object

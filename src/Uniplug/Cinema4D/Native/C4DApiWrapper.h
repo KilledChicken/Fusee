@@ -130,6 +130,8 @@ public:
     virtual void SetHandle(BaseObject *op, LONG i, Vector p, HandleInfo const &info);
     virtual ~SwigDirector_ObjectDataM();
     virtual Bool GetDDescription(GeListNode *node, DDescriptionParams *descparams);
+    virtual Bool OnDescriptionCommand(GeListNode *node, DescriptionCommand *desc);
+    virtual Bool OnMenuPrepare(GeListNode *node, BaseDocument *doc);
 
     typedef unsigned int (SWIGSTDCALL* SWIG_Callback0_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)(void *);
@@ -163,7 +165,9 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback29_t)(void *, int, void *);
     typedef void (SWIGSTDCALL* SWIG_Callback30_t)(void *, int, Vector_POD /* Vector_ctype_out */, void *);
     typedef unsigned int (SWIGSTDCALL* SWIG_Callback31_t)(void *, void *);
-    void swig_connect_director(SWIG_Callback0_t callbackInit, SWIG_Callback1_t callbackFree, SWIG_Callback2_t callbackRead, SWIG_Callback3_t callbackWrite, SWIG_Callback4_t callbackMessage, SWIG_Callback5_t callbackCopyTo, SWIG_Callback6_t callbackGetBubbleHelp, SWIG_Callback7_t callbackGetDocument, SWIG_Callback8_t callbackGetBranchInfo, SWIG_Callback9_t callbackIsInstanceOf, SWIG_Callback10_t callbackGetDDescription__SWIG_0, SWIG_Callback11_t callbackGetDParameter, SWIG_Callback12_t callbackGetDEnabling, SWIG_Callback13_t callbackSetDParameter, SWIG_Callback14_t callbackTranslateDescID, SWIG_Callback15_t callbackIsDocumentRelated, SWIG_Callback16_t callbackGetDimension, SWIG_Callback17_t callbackDraw, SWIG_Callback18_t callbackDetectHandle, SWIG_Callback19_t callbackMoveHandle, SWIG_Callback20_t callbackAddToExecution, SWIG_Callback21_t callbackExecute, SWIG_Callback22_t callbackGetModelingAxis, SWIG_Callback23_t callbackGetVirtualObjects, SWIG_Callback24_t callbackModifyObject, SWIG_Callback25_t callbackCheckDirty, SWIG_Callback26_t callbackGetContour, SWIG_Callback27_t callbackModifyParticles, SWIG_Callback28_t callbackGetHandleCount, SWIG_Callback29_t callbackGetHandle, SWIG_Callback30_t callbackSetHandle, SWIG_Callback31_t callbackGetDDescription__SWIG_1);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback32_t)(void *, void *);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback33_t)(void *, void *);
+    void swig_connect_director(SWIG_Callback0_t callbackInit, SWIG_Callback1_t callbackFree, SWIG_Callback2_t callbackRead, SWIG_Callback3_t callbackWrite, SWIG_Callback4_t callbackMessage, SWIG_Callback5_t callbackCopyTo, SWIG_Callback6_t callbackGetBubbleHelp, SWIG_Callback7_t callbackGetDocument, SWIG_Callback8_t callbackGetBranchInfo, SWIG_Callback9_t callbackIsInstanceOf, SWIG_Callback10_t callbackGetDDescription__SWIG_0, SWIG_Callback11_t callbackGetDParameter, SWIG_Callback12_t callbackGetDEnabling, SWIG_Callback13_t callbackSetDParameter, SWIG_Callback14_t callbackTranslateDescID, SWIG_Callback15_t callbackIsDocumentRelated, SWIG_Callback16_t callbackGetDimension, SWIG_Callback17_t callbackDraw, SWIG_Callback18_t callbackDetectHandle, SWIG_Callback19_t callbackMoveHandle, SWIG_Callback20_t callbackAddToExecution, SWIG_Callback21_t callbackExecute, SWIG_Callback22_t callbackGetModelingAxis, SWIG_Callback23_t callbackGetVirtualObjects, SWIG_Callback24_t callbackModifyObject, SWIG_Callback25_t callbackCheckDirty, SWIG_Callback26_t callbackGetContour, SWIG_Callback27_t callbackModifyParticles, SWIG_Callback28_t callbackGetHandleCount, SWIG_Callback29_t callbackGetHandle, SWIG_Callback30_t callbackSetHandle, SWIG_Callback31_t callbackGetDDescription__SWIG_1, SWIG_Callback32_t callbackOnDescriptionCommand, SWIG_Callback33_t callbackOnMenuPrepare);
 
 private:
     SWIG_Callback0_t swig_callbackInit;
@@ -198,6 +202,8 @@ private:
     SWIG_Callback29_t swig_callbackGetHandle;
     SWIG_Callback30_t swig_callbackSetHandle;
     SWIG_Callback31_t swig_callbackGetDDescription__SWIG_1;
+    SWIG_Callback32_t swig_callbackOnDescriptionCommand;
+    SWIG_Callback33_t swig_callbackOnMenuPrepare;
     void swig_init_callbacks();
 };
 

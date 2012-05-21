@@ -205,6 +205,9 @@ class C4dApiPINVOKE {
        case 1001149:
          ret = new XPressoTag(cPtr, owner);
          break;
+	   //case 1019365:
+		 //ret = new CAWeightTag(cPtr, owner);
+		// break;
       // Repeat for every other concrete type.
       default:
 	  //changed from the debug output to return a BaseTag object
@@ -11729,6 +11732,24 @@ class C4dApiPINVOKE {
   [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_GetDDescriptionSwigExplicitObjectDataM__SWIG_1")]
   public static extern bool ObjectDataM_GetDDescriptionSwigExplicitObjectDataM__SWIG_1(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
 
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_Message")]
+  public static extern bool ObjectDataM_Message(HandleRef jarg1, HandleRef jarg2, int jarg3, HandleRef jarg4);
+
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_MessageSwigExplicitObjectDataM")]
+  public static extern bool ObjectDataM_MessageSwigExplicitObjectDataM(HandleRef jarg1, HandleRef jarg2, int jarg3, HandleRef jarg4);
+
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_OnDescriptionCommand")]
+  public static extern bool ObjectDataM_OnDescriptionCommand(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
+
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_OnDescriptionCommandSwigExplicitObjectDataM")]
+  public static extern bool ObjectDataM_OnDescriptionCommandSwigExplicitObjectDataM(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
+
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_OnMenuPrepare")]
+  public static extern bool ObjectDataM_OnMenuPrepare(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
+
+  [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_OnMenuPrepareSwigExplicitObjectDataM")]
+  public static extern bool ObjectDataM_OnMenuPrepareSwigExplicitObjectDataM(HandleRef jarg1, HandleRef jarg2, HandleRef jarg3);
+
   [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_GetDataInstance__SWIG_0")]
   public static extern IntPtr ObjectDataM_GetDataInstance__SWIG_0(HandleRef jarg1);
 
@@ -11736,7 +11757,7 @@ class C4dApiPINVOKE {
   public static extern IntPtr ObjectDataM_GetDataInstance__SWIG_1(HandleRef jarg1);
 
   [DllImport("Native.cdl", EntryPoint="CSharp_ObjectDataM_director_connect")]
-  public static extern void ObjectDataM_director_connect(HandleRef jarg1, ObjectDataM.SwigDelegateObjectDataM_0 delegate0, ObjectDataM.SwigDelegateObjectDataM_1 delegate1, ObjectDataM.SwigDelegateObjectDataM_2 delegate2, ObjectDataM.SwigDelegateObjectDataM_3 delegate3, ObjectDataM.SwigDelegateObjectDataM_4 delegate4, ObjectDataM.SwigDelegateObjectDataM_5 delegate5, ObjectDataM.SwigDelegateObjectDataM_6 delegate6, ObjectDataM.SwigDelegateObjectDataM_7 delegate7, ObjectDataM.SwigDelegateObjectDataM_8 delegate8, ObjectDataM.SwigDelegateObjectDataM_9 delegate9, ObjectDataM.SwigDelegateObjectDataM_10 delegate10, ObjectDataM.SwigDelegateObjectDataM_11 delegate11, ObjectDataM.SwigDelegateObjectDataM_12 delegate12, ObjectDataM.SwigDelegateObjectDataM_13 delegate13, ObjectDataM.SwigDelegateObjectDataM_14 delegate14, ObjectDataM.SwigDelegateObjectDataM_15 delegate15, ObjectDataM.SwigDelegateObjectDataM_16 delegate16, ObjectDataM.SwigDelegateObjectDataM_17 delegate17, ObjectDataM.SwigDelegateObjectDataM_18 delegate18, ObjectDataM.SwigDelegateObjectDataM_19 delegate19, ObjectDataM.SwigDelegateObjectDataM_20 delegate20, ObjectDataM.SwigDelegateObjectDataM_21 delegate21, ObjectDataM.SwigDelegateObjectDataM_22 delegate22, ObjectDataM.SwigDelegateObjectDataM_23 delegate23, ObjectDataM.SwigDelegateObjectDataM_24 delegate24, ObjectDataM.SwigDelegateObjectDataM_25 delegate25, ObjectDataM.SwigDelegateObjectDataM_26 delegate26, ObjectDataM.SwigDelegateObjectDataM_27 delegate27, ObjectDataM.SwigDelegateObjectDataM_28 delegate28, ObjectDataM.SwigDelegateObjectDataM_29 delegate29, ObjectDataM.SwigDelegateObjectDataM_30 delegate30, ObjectDataM.SwigDelegateObjectDataM_31 delegate31);
+  public static extern void ObjectDataM_director_connect(HandleRef jarg1, ObjectDataM.SwigDelegateObjectDataM_0 delegate0, ObjectDataM.SwigDelegateObjectDataM_1 delegate1, ObjectDataM.SwigDelegateObjectDataM_2 delegate2, ObjectDataM.SwigDelegateObjectDataM_3 delegate3, ObjectDataM.SwigDelegateObjectDataM_4 delegate4, ObjectDataM.SwigDelegateObjectDataM_5 delegate5, ObjectDataM.SwigDelegateObjectDataM_6 delegate6, ObjectDataM.SwigDelegateObjectDataM_7 delegate7, ObjectDataM.SwigDelegateObjectDataM_8 delegate8, ObjectDataM.SwigDelegateObjectDataM_9 delegate9, ObjectDataM.SwigDelegateObjectDataM_10 delegate10, ObjectDataM.SwigDelegateObjectDataM_11 delegate11, ObjectDataM.SwigDelegateObjectDataM_12 delegate12, ObjectDataM.SwigDelegateObjectDataM_13 delegate13, ObjectDataM.SwigDelegateObjectDataM_14 delegate14, ObjectDataM.SwigDelegateObjectDataM_15 delegate15, ObjectDataM.SwigDelegateObjectDataM_16 delegate16, ObjectDataM.SwigDelegateObjectDataM_17 delegate17, ObjectDataM.SwigDelegateObjectDataM_18 delegate18, ObjectDataM.SwigDelegateObjectDataM_19 delegate19, ObjectDataM.SwigDelegateObjectDataM_20 delegate20, ObjectDataM.SwigDelegateObjectDataM_21 delegate21, ObjectDataM.SwigDelegateObjectDataM_22 delegate22, ObjectDataM.SwigDelegateObjectDataM_23 delegate23, ObjectDataM.SwigDelegateObjectDataM_24 delegate24, ObjectDataM.SwigDelegateObjectDataM_25 delegate25, ObjectDataM.SwigDelegateObjectDataM_26 delegate26, ObjectDataM.SwigDelegateObjectDataM_27 delegate27, ObjectDataM.SwigDelegateObjectDataM_28 delegate28, ObjectDataM.SwigDelegateObjectDataM_29 delegate29, ObjectDataM.SwigDelegateObjectDataM_30 delegate30, ObjectDataM.SwigDelegateObjectDataM_31 delegate31, ObjectDataM.SwigDelegateObjectDataM_32 delegate32, ObjectDataM.SwigDelegateObjectDataM_33 delegate33);
 
   [DllImport("Native.cdl", EntryPoint="CSharp_GVdynamic_get")]
   public static extern int GVdynamic_get();

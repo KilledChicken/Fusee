@@ -1025,7 +1025,7 @@ Bool SwigDirector_ObjectDataM::Message(GeListNode *node, LONG type, void *data) 
   void * jdata = 0 ;
   
   if (!swig_callbackMessage) {
-    return NodeData::Message(node,type,data);
+    return ObjectDataM::Message(node,type,data);
   } else {
     jnode = (void *) node; 
     jtype = type;
@@ -1564,7 +1564,41 @@ Bool SwigDirector_ObjectDataM::GetDDescription(GeListNode *node, DDescriptionPar
   return c_result;
 }
 
-void SwigDirector_ObjectDataM::swig_connect_director(SWIG_Callback0_t callbackInit, SWIG_Callback1_t callbackFree, SWIG_Callback2_t callbackRead, SWIG_Callback3_t callbackWrite, SWIG_Callback4_t callbackMessage, SWIG_Callback5_t callbackCopyTo, SWIG_Callback6_t callbackGetBubbleHelp, SWIG_Callback7_t callbackGetDocument, SWIG_Callback8_t callbackGetBranchInfo, SWIG_Callback9_t callbackIsInstanceOf, SWIG_Callback10_t callbackGetDDescription__SWIG_0, SWIG_Callback11_t callbackGetDParameter, SWIG_Callback12_t callbackGetDEnabling, SWIG_Callback13_t callbackSetDParameter, SWIG_Callback14_t callbackTranslateDescID, SWIG_Callback15_t callbackIsDocumentRelated, SWIG_Callback16_t callbackGetDimension, SWIG_Callback17_t callbackDraw, SWIG_Callback18_t callbackDetectHandle, SWIG_Callback19_t callbackMoveHandle, SWIG_Callback20_t callbackAddToExecution, SWIG_Callback21_t callbackExecute, SWIG_Callback22_t callbackGetModelingAxis, SWIG_Callback23_t callbackGetVirtualObjects, SWIG_Callback24_t callbackModifyObject, SWIG_Callback25_t callbackCheckDirty, SWIG_Callback26_t callbackGetContour, SWIG_Callback27_t callbackModifyParticles, SWIG_Callback28_t callbackGetHandleCount, SWIG_Callback29_t callbackGetHandle, SWIG_Callback30_t callbackSetHandle, SWIG_Callback31_t callbackGetDDescription__SWIG_1) {
+Bool SwigDirector_ObjectDataM::OnDescriptionCommand(GeListNode *node, DescriptionCommand *desc) {
+  Bool c_result = SwigValueInit< Bool >() ;
+  unsigned int jresult = 0 ;
+  void * jnode = 0 ;
+  void * jdesc = 0 ;
+  
+  if (!swig_callbackOnDescriptionCommand) {
+    return ObjectDataM::OnDescriptionCommand(node,desc);
+  } else {
+    jnode = (void *) node; 
+    jdesc = (void *) desc; 
+    jresult = (unsigned int) swig_callbackOnDescriptionCommand(jnode, jdesc);
+    c_result = jresult ? true : false; 
+  }
+  return c_result;
+}
+
+Bool SwigDirector_ObjectDataM::OnMenuPrepare(GeListNode *node, BaseDocument *doc) {
+  Bool c_result = SwigValueInit< Bool >() ;
+  unsigned int jresult = 0 ;
+  void * jnode = 0 ;
+  void * jdoc = 0 ;
+  
+  if (!swig_callbackOnMenuPrepare) {
+    return ObjectDataM::OnMenuPrepare(node,doc);
+  } else {
+    jnode = (void *) node; 
+    jdoc = (void *) doc; 
+    jresult = (unsigned int) swig_callbackOnMenuPrepare(jnode, jdoc);
+    c_result = jresult ? true : false; 
+  }
+  return c_result;
+}
+
+void SwigDirector_ObjectDataM::swig_connect_director(SWIG_Callback0_t callbackInit, SWIG_Callback1_t callbackFree, SWIG_Callback2_t callbackRead, SWIG_Callback3_t callbackWrite, SWIG_Callback4_t callbackMessage, SWIG_Callback5_t callbackCopyTo, SWIG_Callback6_t callbackGetBubbleHelp, SWIG_Callback7_t callbackGetDocument, SWIG_Callback8_t callbackGetBranchInfo, SWIG_Callback9_t callbackIsInstanceOf, SWIG_Callback10_t callbackGetDDescription__SWIG_0, SWIG_Callback11_t callbackGetDParameter, SWIG_Callback12_t callbackGetDEnabling, SWIG_Callback13_t callbackSetDParameter, SWIG_Callback14_t callbackTranslateDescID, SWIG_Callback15_t callbackIsDocumentRelated, SWIG_Callback16_t callbackGetDimension, SWIG_Callback17_t callbackDraw, SWIG_Callback18_t callbackDetectHandle, SWIG_Callback19_t callbackMoveHandle, SWIG_Callback20_t callbackAddToExecution, SWIG_Callback21_t callbackExecute, SWIG_Callback22_t callbackGetModelingAxis, SWIG_Callback23_t callbackGetVirtualObjects, SWIG_Callback24_t callbackModifyObject, SWIG_Callback25_t callbackCheckDirty, SWIG_Callback26_t callbackGetContour, SWIG_Callback27_t callbackModifyParticles, SWIG_Callback28_t callbackGetHandleCount, SWIG_Callback29_t callbackGetHandle, SWIG_Callback30_t callbackSetHandle, SWIG_Callback31_t callbackGetDDescription__SWIG_1, SWIG_Callback32_t callbackOnDescriptionCommand, SWIG_Callback33_t callbackOnMenuPrepare) {
   swig_callbackInit = callbackInit;
   swig_callbackFree = callbackFree;
   swig_callbackRead = callbackRead;
@@ -1597,6 +1631,8 @@ void SwigDirector_ObjectDataM::swig_connect_director(SWIG_Callback0_t callbackIn
   swig_callbackGetHandle = callbackGetHandle;
   swig_callbackSetHandle = callbackSetHandle;
   swig_callbackGetDDescription__SWIG_1 = callbackGetDDescription__SWIG_1;
+  swig_callbackOnDescriptionCommand = callbackOnDescriptionCommand;
+  swig_callbackOnMenuPrepare = callbackOnMenuPrepare;
 }
 
 void SwigDirector_ObjectDataM::swig_init_callbacks() {
@@ -1632,6 +1668,8 @@ void SwigDirector_ObjectDataM::swig_init_callbacks() {
   swig_callbackGetHandle = 0;
   swig_callbackSetHandle = 0;
   swig_callbackGetDDescription__SWIG_1 = 0;
+  swig_callbackOnDescriptionCommand = 0;
+  swig_callbackOnMenuPrepare = 0;
 }
 
 
@@ -49440,6 +49478,106 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_GetDDescriptionSwigExplic
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_Message(void * jarg1, void * jarg2, int jarg3, void * jarg4) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  LONG arg3 ;
+  void *arg4 = (void *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (LONG)jarg3; 
+  arg4 = (void *)jarg4; 
+  result = (arg1)->Message(arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_MessageSwigExplicitObjectDataM(void * jarg1, void * jarg2, int jarg3, void * jarg4) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  LONG arg3 ;
+  void *arg4 = (void *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (LONG)jarg3; 
+  arg4 = (void *)jarg4; 
+  result = (arg1)->ObjectDataM::Message(arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_OnDescriptionCommand(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  DescriptionCommand *arg3 = (DescriptionCommand *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (DescriptionCommand *)jarg3; 
+  result = (arg1)->OnDescriptionCommand(arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_OnDescriptionCommandSwigExplicitObjectDataM(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  DescriptionCommand *arg3 = (DescriptionCommand *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (DescriptionCommand *)jarg3; 
+  result = (arg1)->ObjectDataM::OnDescriptionCommand(arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_OnMenuPrepare(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  BaseDocument *arg3 = (BaseDocument *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (BaseDocument *)jarg3; 
+  result = (arg1)->OnMenuPrepare(arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ObjectDataM_OnMenuPrepareSwigExplicitObjectDataM(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  ObjectDataM *arg1 = (ObjectDataM *) 0 ;
+  GeListNode *arg2 = (GeListNode *) 0 ;
+  BaseDocument *arg3 = (BaseDocument *) 0 ;
+  Bool result;
+  
+  arg1 = (ObjectDataM *)jarg1; 
+  arg2 = (GeListNode *)jarg2; 
+  arg3 = (BaseDocument *)jarg3; 
+  result = (arg1)->ObjectDataM::OnMenuPrepare(arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_ObjectDataM_GetDataInstance__SWIG_0(void * jarg1) {
   void * jresult ;
   BaseObject *arg1 = (BaseObject *) 0 ;
@@ -49464,11 +49602,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ObjectDataM_GetDataInstance__SWIG_1(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ObjectDataM_director_connect(void *objarg, SwigDirector_ObjectDataM::SWIG_Callback0_t callback0, SwigDirector_ObjectDataM::SWIG_Callback1_t callback1, SwigDirector_ObjectDataM::SWIG_Callback2_t callback2, SwigDirector_ObjectDataM::SWIG_Callback3_t callback3, SwigDirector_ObjectDataM::SWIG_Callback4_t callback4, SwigDirector_ObjectDataM::SWIG_Callback5_t callback5, SwigDirector_ObjectDataM::SWIG_Callback6_t callback6, SwigDirector_ObjectDataM::SWIG_Callback7_t callback7, SwigDirector_ObjectDataM::SWIG_Callback8_t callback8, SwigDirector_ObjectDataM::SWIG_Callback9_t callback9, SwigDirector_ObjectDataM::SWIG_Callback10_t callback10, SwigDirector_ObjectDataM::SWIG_Callback11_t callback11, SwigDirector_ObjectDataM::SWIG_Callback12_t callback12, SwigDirector_ObjectDataM::SWIG_Callback13_t callback13, SwigDirector_ObjectDataM::SWIG_Callback14_t callback14, SwigDirector_ObjectDataM::SWIG_Callback15_t callback15, SwigDirector_ObjectDataM::SWIG_Callback16_t callback16, SwigDirector_ObjectDataM::SWIG_Callback17_t callback17, SwigDirector_ObjectDataM::SWIG_Callback18_t callback18, SwigDirector_ObjectDataM::SWIG_Callback19_t callback19, SwigDirector_ObjectDataM::SWIG_Callback20_t callback20, SwigDirector_ObjectDataM::SWIG_Callback21_t callback21, SwigDirector_ObjectDataM::SWIG_Callback22_t callback22, SwigDirector_ObjectDataM::SWIG_Callback23_t callback23, SwigDirector_ObjectDataM::SWIG_Callback24_t callback24, SwigDirector_ObjectDataM::SWIG_Callback25_t callback25, SwigDirector_ObjectDataM::SWIG_Callback26_t callback26, SwigDirector_ObjectDataM::SWIG_Callback27_t callback27, SwigDirector_ObjectDataM::SWIG_Callback28_t callback28, SwigDirector_ObjectDataM::SWIG_Callback29_t callback29, SwigDirector_ObjectDataM::SWIG_Callback30_t callback30, SwigDirector_ObjectDataM::SWIG_Callback31_t callback31) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ObjectDataM_director_connect(void *objarg, SwigDirector_ObjectDataM::SWIG_Callback0_t callback0, SwigDirector_ObjectDataM::SWIG_Callback1_t callback1, SwigDirector_ObjectDataM::SWIG_Callback2_t callback2, SwigDirector_ObjectDataM::SWIG_Callback3_t callback3, SwigDirector_ObjectDataM::SWIG_Callback4_t callback4, SwigDirector_ObjectDataM::SWIG_Callback5_t callback5, SwigDirector_ObjectDataM::SWIG_Callback6_t callback6, SwigDirector_ObjectDataM::SWIG_Callback7_t callback7, SwigDirector_ObjectDataM::SWIG_Callback8_t callback8, SwigDirector_ObjectDataM::SWIG_Callback9_t callback9, SwigDirector_ObjectDataM::SWIG_Callback10_t callback10, SwigDirector_ObjectDataM::SWIG_Callback11_t callback11, SwigDirector_ObjectDataM::SWIG_Callback12_t callback12, SwigDirector_ObjectDataM::SWIG_Callback13_t callback13, SwigDirector_ObjectDataM::SWIG_Callback14_t callback14, SwigDirector_ObjectDataM::SWIG_Callback15_t callback15, SwigDirector_ObjectDataM::SWIG_Callback16_t callback16, SwigDirector_ObjectDataM::SWIG_Callback17_t callback17, SwigDirector_ObjectDataM::SWIG_Callback18_t callback18, SwigDirector_ObjectDataM::SWIG_Callback19_t callback19, SwigDirector_ObjectDataM::SWIG_Callback20_t callback20, SwigDirector_ObjectDataM::SWIG_Callback21_t callback21, SwigDirector_ObjectDataM::SWIG_Callback22_t callback22, SwigDirector_ObjectDataM::SWIG_Callback23_t callback23, SwigDirector_ObjectDataM::SWIG_Callback24_t callback24, SwigDirector_ObjectDataM::SWIG_Callback25_t callback25, SwigDirector_ObjectDataM::SWIG_Callback26_t callback26, SwigDirector_ObjectDataM::SWIG_Callback27_t callback27, SwigDirector_ObjectDataM::SWIG_Callback28_t callback28, SwigDirector_ObjectDataM::SWIG_Callback29_t callback29, SwigDirector_ObjectDataM::SWIG_Callback30_t callback30, SwigDirector_ObjectDataM::SWIG_Callback31_t callback31, SwigDirector_ObjectDataM::SWIG_Callback32_t callback32, SwigDirector_ObjectDataM::SWIG_Callback33_t callback33) {
   ObjectDataM *obj = (ObjectDataM *)objarg;
   SwigDirector_ObjectDataM *director = dynamic_cast<SwigDirector_ObjectDataM *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31, callback32, callback33);
   }
 }
 

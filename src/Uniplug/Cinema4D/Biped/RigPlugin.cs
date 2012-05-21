@@ -34,7 +34,7 @@ namespace RigPlugin
 
         //wird aufgerufen, wenn ein Event ausgeführt wurde
         //TODO: Override gelöscht - DS
-        public bool OnDescriptionCommand(GeListNode node, DescriptionCommand desc)
+        public override bool OnDescriptionCommand(GeListNode node, DescriptionCommand desc)
         {
             long button = desc.id.GetAt(0).id;
             //BaseList2D ObjSelector = bc.GetLink(SKELETT_OBJ_AUSWAHL, doc);
